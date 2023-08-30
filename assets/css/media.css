@@ -1,0 +1,39 @@
+@media (max-width: 991px) {
+  .carousel_item::before {
+    position: static;
+    background: none;
+  }
+  .nav-link.active::before {
+    content: "";
+    position: static !important;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    background: none !important;
+  }
+  .header_body {
+    max-width: 90% !important;
+  }
+  .rewords {
+    transform: translateY(0) !important;
+  }
+  .carousel_inner, .carousel_img {
+    height: 150vh !important;
+  }
+}
+@media (max-width: 768px) {
+  .header_title {
+    font-size: 3rem !important;
+  }
+  .header_description {
+    font-size: 1.25rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .header_title {
+    font-size: 2rem !important;
+    max-width: 100% !important;
+  }
+}

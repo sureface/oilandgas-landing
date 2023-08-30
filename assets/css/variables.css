@@ -1,0 +1,14 @@
+@import url("./colors.css");
+
+ /* font Size */
+.fs-13 {
+  font-size: 0.813rem;
+}
+
+ /* color variables */
+.primary {
+  color: var(--primary);
+}
+.bg-dark-blue {
+  background-color:  var(--primary);
+}
