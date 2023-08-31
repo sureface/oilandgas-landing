@@ -69,3 +69,52 @@ function getItemActiveIndex() {
   const itemActiveIndex = itemsArray.indexOf(itemActive);
   return itemActiveIndex;
 }
+
+// /////////////////////////////////////////   Chat Js //////////////
+
+var chart;
+var legend;
+
+var chartData = [
+  {
+    country: "Lithuania",
+    value: 260,
+  },
+  {
+    country: "Ireland",
+    value: 201,
+  },
+  {
+    country: "Germany",
+    value: 65,
+  },
+  {
+    country: "Australia",
+    value: 39,
+  },
+  {
+    country: "UK",
+    value: 19,
+  },
+  {
+    country: "Latvia",
+    value: 10,
+  },
+];
+
+am4core.ready(function () {
+  // PIE CHART
+  chart = new am4charts.PieChart3D();
+  chart.dataProvider = chartData;
+  chart.titleField = "country";
+  chart.valueField = "value";
+  chart.outlineColor = "";
+  chart.outlineAlpha = 0.8;
+  chart.outlineThickness = 2;
+  // this makes the chart 3D
+  chart.depth3D = 20;
+  chart.angle = 30;
+
+  // WRITE
+  chart.write("chartdiv");
+});
