@@ -33,9 +33,8 @@
             class="navbar-toggler ms-auto me-3"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar"
-            aria-label="Toggle navigation"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"
           >
             <i
               class="fa-solid fa-bars-staggered fa-lg"
@@ -43,10 +42,11 @@
             ></i>
           </button>
           <div
-            class="offcanvas offcanvas-end bg-dark-blue"
+            class="offcanvas offcanvas-start bg-dark-blue"
+            data-bs-scroll="true"
             tabindex="-1"
-            id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel"
           >
             <div class="offcanvas-header">
               <h5
@@ -259,9 +259,9 @@
       </div>
     </header>
 
-    <main class="container-fluid mt-5">
+    <main class="container-fluid mt-5 mb-5">
       <div class="row gap-10 whoWeAre ms-4 me-4">
-        <div class="col-6 p-5 whoWeAre_content">
+        <div class="col-lg-7 col-12 p-5 whoWeAre_content">
           <div class="whoWeAre_heading">Who We Are</div>
           <div class="whoWeAre_title">
             Providing affordable and reliable energy
@@ -269,50 +269,55 @@
           <div class="whoWeAre_description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-            luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-            nec ullamcorper mattis, pulvinar dapibus leo.
+            ipsum dolor sit amet, consectetur adipiscing elit. tellus, luctus
+            nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Ut elit
           </div>
           <button type="button" class="whoWeAre_btn">read More</button>
         </div>
-        <div class="col-6 p-5">
-          <div class="whoWeAre__vid">
-            <img
-              src="./assets/img/whoweare.jpg"
-              alt="err"
-              class="whoWeAre__img"
-            />
-            <div
-              class="whoWeAre_play"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-            >
-              <i class="fa-solid fa-play fa-lg" style="color: #ffffff"></i>
+        <div class="col-lg-5 col-12 position-relative whoWeAre_video-warapper">
+          <div class="position-absolute whoWeAre__vid-wrapper">
+            <div class="whoWeAre__vid">
+              <img
+                src="./assets/img/whoweare.jpg"
+                alt="err"
+                class="whoWeAre__img"
+              />
+              <div
+                class="whoWeAre_play"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fa-solid fa-play fa-lg" style="color: #ffffff"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
         class="modal fades"
-        id="myModal"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-        aria-labelledby="modal"
       >
-        <div class="video_x" data-bs-dismiss="modal" aria-label="Close">
+        <div class="video_x" data-bs-dismiss="modal">
           <i class="fa-solid fa-x" style="color: #ffffff"></i>
         </div>
-        <div class="modal-dialog modal-dialog-centered video_wrapper shadow-lg">
-          <iframe
-            width="700"
-            height="500"
-            src="https://www.youtube.com/embed/sQoiM7i5Nqc?si=j3xjmgX5pxvRVWY9"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            class="video_play"
-          ></iframe>
+        <div class="modal-dialog modal-dialog-centered shadow-lg video_wrapper">
+          <div class="modal-content w-100 h-100">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/sQoiM7i5Nqc?si=j3xjmgX5pxvRVWY9"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="video_play"
+            ></iframe>
+          </div>
         </div>
       </div>
     </main>

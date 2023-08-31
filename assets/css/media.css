@@ -1,4 +1,53 @@
+@media (max-width: 1250px) {
+  .whoWeAre__vid {
+    height: 460px;
+    width: 600px !important;
+  }
+  .whoWeAre__vid-wrapper {
+    bottom: -110px !important;
+  }
+}
+@media (max-width: 1199px) {
+  .whoWeAre__vid {
+    height: 478px !important;
+    width: 567px !important;
+  }
+}
+@media (max-width: 1084px) {
+  .whoWeAre__vid {
+    height: 557px !important;
+    width: 522px !important;
+  }
+  .whoWeAre__vid-wrapper {
+    bottom: -240px !important;
+  }
+}
 @media (max-width: 991px) {
+  .whoWeAre .whoWeAre_content {
+    padding-right: 50px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 100px !important;
+  }
+  .whoWeAre__vid-wrapper {
+    left: unset !important;
+    bottom: 0 !important;
+    top: -50px;
+    width: 97%;
+    right: 0;
+  }
+  .whoWeAre__vid-wrapper .whoWeAre__vid {
+    width: 100% !important;
+    height: 420px !important;
+  }
+  .whoWeAre__img {
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+  }
   .carousel_item::before {
     position: static;
     background: none;
@@ -19,7 +68,8 @@
   .rewords {
     transform: translateY(0) !important;
   }
-  .carousel_inner, .carousel_img {
+  .carousel_inner,
+  .carousel_img {
     height: 150vh !important;
   }
 }
@@ -35,5 +85,42 @@
   .header_title {
     font-size: 2rem !important;
     max-width: 100% !important;
+  }
+  .whoWeAre_title {
+    font-size: 1.625rem !important;
+  }
+  .whoWeAre_description {
+    font-size: 1rem !important;
+  }
+  .whoWeAre .whoWeAre_content {
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+  }
+  .whoWeAre {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .whoWeAre__vid-wrapper {
+    width: 100% !important;
+  }
+  .whoWeAre__vid-wrapper .whoWeAre__vid {
+    height: 300px !important;
+  }
+  .whoWeAre_video-warapper {
+    height: 300px !important;
+  }
+  .whoWeAre_play {
+    top: -8px !important;
+    right: -8px !important;
+    width: 75px !important;
+    height: 75px !important;
+    border: 7px solid var(--white) !important;
+  }
+  .video_x {
+    position: absolute;
+    top: 10px !important;
+    right: 10px !important;
+    width: 35px !important;
+    height: 35px !important;
   }
 }
