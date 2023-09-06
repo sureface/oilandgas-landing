@@ -1,10 +1,10 @@
 :root {
   --primary: #003087;
   --primary-hover: #033aa0;
+  --primary-light: #063999;
   --white: #ffffff;
   --black: #000000;
-  --gis-uzb-layer-bg: #F3F7FF;
-  --gis-uzb-layer-active-gb-hover: rgba(0,48,135,.9);
+  --gis-uzb-layer-bg: #f2f2ff;
+  --gis-uzb-layer-active-gb-hover: rgba(0, 48, 135, 0.9);
   --gis-uzb-layer-stoke: #aec0df;
-
 }

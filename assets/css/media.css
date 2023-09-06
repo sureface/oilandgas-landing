@@ -23,6 +23,9 @@
   }
 }
 @media (max-width: 991px) {
+  .contact_email-wrapper {
+    width: 100%;
+  }
   .whoWeAre .whoWeAre_content {
     padding-right: 50px !important;
     margin-bottom: 0 !important;
@@ -82,6 +85,42 @@
   }
 }
 @media (max-width: 576px) {
+  .statistic_heading {
+    font-size: large;
+    text-align: center;
+  }
+  .statistic_subText {
+    font-size: medium;
+    text-align: center;
+  }
+  .contact_email-wrapper {
+    flex-direction: column;
+  }
+  .contact_email {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    margin-right: 0 !important;
+  }
+  ::placeholder {
+    font-size: 1rem;
+  }
+  .contact_btn {
+    font-size: 1rem;
+  }
+  .contact_logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .contact_links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+  }
   .header_title {
     font-size: 2rem !important;
     max-width: 100% !important;
