@@ -72,49 +72,108 @@ function getItemActiveIndex() {
 
 // /////////////////////////////////////////   Chat Js //////////////
 
-var chart;
-var legend;
-
-var chartData = [
-  {
-    country: "Lithuania",
-    value: 260,
-  },
-  {
-    country: "Ireland",
-    value: 201,
-  },
-  {
-    country: "Germany",
-    value: 65,
-  },
-  {
-    country: "Australia",
-    value: 39,
-  },
-  {
-    country: "UK",
-    value: 19,
-  },
-  {
-    country: "Latvia",
-    value: 10,
-  },
-];
-
 am4core.ready(function () {
-  // PIE CHART
-  chart = new am4charts.PieChart3D();
-  chart.dataProvider = chartData;
-  chart.titleField = "country";
-  chart.valueField = "value";
-  chart.outlineColor = "";
-  chart.outlineAlpha = 0.8;
-  chart.outlineThickness = 2;
-  // this makes the chart 3D
-  chart.depth3D = 20;
-  chart.angle = 30;
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
 
-  // WRITE
-  chart.write("chartdiv");
-});
+  var chart = am4core.create("chartdiv", am4charts.PieChart3D);
+  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+  chart.legend = new am4charts.Legend();
+
+  chart.data = [
+    {
+      country: "Lithuania",
+      litres: 501.9,
+    },
+    {
+      country: "Czech Republic",
+      litres: 301.9,
+    },
+    {
+      country: "Ireland",
+      litres: 201.1,
+    },
+    {
+      country: "Germany",
+      litres: 165.8,
+    },
+    {
+      country: "Australia",
+      litres: 139.9,
+    },
+    {
+      country: "Austria",
+      litres: 128.3,
+    },
+    {
+      country: "UK",
+      litres: 99,
+    },
+    {
+      country: "Belgium",
+      litres: 60,
+    },
+    {
+      country: "The Netherlands",
+      litres: 50,
+    },
+  ];
+
+  var series = chart.series.push(new am4charts.PieSeries3D());
+  series.dataFields.value = "litres";
+  series.dataFields.category = "country";
+  series.ticks.template.disabled = true;
+  series.alignLabels = false;
+  series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+  series.labels.template.radius = am4core.percent(-40);
+  series.labels.template.fill = am4core.color("white");
+  series.labels.template.relativeRotation = 90;
+
+  chart.responsive.enabled = true;
+  chart.responsive.useDefault = false;
+  chart.responsive.rules.push({
+    relevant: function (target) {
+      if (target.pixelWidth <= 767) {
+        return true;
+      }
+
+      return false;
+    },
+    state: function (target, stateId) {
+      if (target instanceof am4charts.Chart) {
+        var state = target.states.create(stateId);
+        state.properties.paddingTop = 0;
+        state.properties.paddingRight = 0;
+        state.properties.paddingBottom = 0;
+        state.properties.paddingLeft = 0;
+        return state;
+      } else if (
+        target instanceof am4charts.AxisLabelCircular ||
+        target instanceof am4charts.PieTick
+      ) {
+        var state = target.states.create(stateId);
+        state.properties.disabled = true;
+        return state;
+      }
+      return null;
+    },
+  });
+}); // end am4core.ready()
+
+// stop youtube video when modal close function
+// document.getElementById("exampleModal").on("hide.bs.modal", function (e) {
+
+//   let $if = e.delegateTarget.find("iframe");
+//   let src = $if.attr("src");
+//   $if.attr("src", "/empty.html");
+//   $if.attr("src", src);
+// });
+// orginal
+// $('#yourModalID').on('hide.bs.modal', function(e) {
+//   var $if = $(e.delegateTarget).find('iframe');
+//   var src = $if.attr("src");
+//   $if.attr("src", '/empty.html');
+//   $if.attr("src", src);
+// });
