@@ -231,12 +231,13 @@ html {
 }
 .whoWeAre_btn {
   border: none;
-  padding: 5px 25px;
+  padding: 10px 25px;
   color: white;
   background-color: var(--primary);
   cursor: pointer;
   text-transform: capitalize;
   transition: 0.3s ease;
+  letter-spacing: 1px;
 }
 .whoWeAre_btn:hover {
   background: var(--primary-hover);
