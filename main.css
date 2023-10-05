@@ -239,6 +239,13 @@ html {
   transition: 0.3s ease;
   letter-spacing: 1px;
 }
+.navbar-login {
+  background-color: var(--primary);
+  padding: 2px 15px;
+  border-radius: 2px;
+  color: var(--white);
+  text-decoration: none;
+}
 .whoWeAre_btn:hover {
   background: var(--primary-hover);
 }
