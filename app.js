@@ -84,10 +84,6 @@ am4core.ready(function () {
 
   chart.data = [
     {
-      country: "Lithuania",
-      litres: 501.9,
-    },
-    {
       country: "Czech Republic",
       litres: 301.9,
     },
@@ -106,18 +102,6 @@ am4core.ready(function () {
     {
       country: "Austria",
       litres: 128.3,
-    },
-    {
-      country: "UK",
-      litres: 99,
-    },
-    {
-      country: "Belgium",
-      litres: 60,
-    },
-    {
-      country: "The Netherlands",
-      litres: 50,
     },
   ];
 
@@ -160,20 +144,52 @@ am4core.ready(function () {
       return null;
     },
   });
+
+  // Add click event listener to each path
+  var paths = document.querySelectorAll(".path");
+  paths.forEach(function (path, index) {
+    path.addEventListener("click", function () {
+      // Update chart data based on the clicked path
+      var newData = getChartData(index); // Replace with your own logic to get the appropriate data for each path
+
+      // Set the new data to the chart
+      chart.data = newData;
+    });
+  });
+
+  // Function to return the appropriate data for each path
+  function getChartData(index) {
+    // Replace with your own logic to return the appropriate data based on the index
+    // Example:
+    if (index === 0) {
+      return [
+        { country: "Neft", litres: 50 },
+        { country: "Gaz", litres: 75 },
+        { country: "Benzin", litres: 150 },
+        // Add more data as needed
+      ];
+    } else if (index === 1) {
+      return [
+        { country: "Benzin(Litr)", litres: 20000 },
+        { country: "Gaz(kub)", litres: 30000 },
+        { country: "Moy(Litr)", litres: 5000 },
+        // Add more data as needed
+      ];
+    } else {
+      // Handle other indices or return default data
+      return [
+        { country: "Default 1", litres: 10 },
+        { country: "Default 2", litres: 20 },
+        { country: "Default 3", litres: 30 },
+        // Add more data as needed
+      ];
+    }
+  }
 }); // end am4core.ready()
 
-// stop youtube video when modal close function
-// document.getElementById("exampleModal").on("hide.bs.modal", function (e) {
-
-//   let $if = e.delegateTarget.find("iframe");
-//   let src = $if.attr("src");
-//   $if.attr("src", "/empty.html");
-//   $if.attr("src", src);
-// });
-// orginal
-// $('#yourModalID').on('hide.bs.modal', function(e) {
-//   var $if = $(e.delegateTarget).find('iframe');
-//   var src = $if.attr("src");
-//   $if.attr("src", '/empty.html');
-//   $if.attr("src", src);
-// });
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);

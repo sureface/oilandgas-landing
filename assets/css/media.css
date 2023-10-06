@@ -1,3 +1,11 @@
+@media (max-width: 1399px) {
+  .rewords {
+    transform: translateY(58%) !important;
+  }
+  .rewords:hover {
+    transform: translateY(0) !important;
+  }
+}
 @media (max-width: 1250px) {
   .whoWeAre__vid {
     height: 460px;

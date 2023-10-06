@@ -190,7 +190,7 @@ html {
   padding-top: 20px;
   border-top: 1px solid var(--white);
   overflow: hidden;
-  transform: translateY(80px);
+  transform: translateY(50%);
   transition: 0.3s ease-in-out;
 }
 .rewords:hover {
