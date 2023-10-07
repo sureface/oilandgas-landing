@@ -45,6 +45,9 @@ html {
   background: var(--primary);
   border-radius: 0 0 1px 1px;
 }
+.offcanvas-backdrop {
+  pointer-events: none !important;
+}
 
 /* header */
 #header {
@@ -241,7 +244,7 @@ html {
 }
 .navbar-login {
   background-color: var(--primary);
-  padding: 2px 15px;
+  padding: 4px 20px;
   border-radius: 2px;
   color: var(--white);
   text-decoration: none;
@@ -321,6 +324,9 @@ html {
 .uzb_layer path:hover {
   fill: var(--primary);
   cursor: pointer;
+}
+.uzb_layer path.active {
+  fill: var(--primary);
 }
 #chartdiv {
   width: 100%;

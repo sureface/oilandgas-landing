@@ -83,26 +83,14 @@ am4core.ready(function () {
   chart.legend = new am4charts.Legend();
 
   chart.data = [
-    {
-      country: "Czech Republic",
-      litres: 301.9,
-    },
-    {
-      country: "Ireland",
-      litres: 201.1,
-    },
-    {
-      country: "Germany",
-      litres: 165.8,
-    },
-    {
-      country: "Australia",
-      litres: 139.9,
-    },
-    {
-      country: "Austria",
-      litres: 128.3,
-    },
+    { country: "Neft", litres: 600 },
+    { country: "Gaz", litres: 500 },
+    { country: "Benzin", litres: 100 },
+    { country: "Dizel", litres: 600 },
+    { country: "Asfalt", litres: 500 },
+    { country: "Ko'mir", litres: 800 },
+    { country: "Mator Moyi", litres: 900 },
+    { country: "kerasin", litres: 150 },
   ];
 
   var series = chart.series.push(new am4charts.PieSeries3D());
@@ -149,7 +137,11 @@ am4core.ready(function () {
   var paths = document.querySelectorAll(".path");
   paths.forEach(function (path, index) {
     path.addEventListener("click", function () {
-      // Update chart data based on the clicked path
+      console.log(index);
+      paths.forEach(function (p) {
+        p.classList.remove("active");
+      });
+      path.classList.add("active");
       var newData = getChartData(index); // Replace with your own logic to get the appropriate data for each path
 
       // Set the new data to the chart
@@ -159,29 +151,171 @@ am4core.ready(function () {
 
   // Function to return the appropriate data for each path
   function getChartData(index) {
-    // Replace with your own logic to return the appropriate data based on the index
-    // Example:
     if (index === 0) {
       return [
         { country: "Neft", litres: 50 },
         { country: "Gaz", litres: 75 },
         { country: "Benzin", litres: 150 },
-        // Add more data as needed
+        { country: "Dizel", litres: 90.4 },
+        { country: "Asfalt", litres: 600 },
+        { country: "Ko'mir", litres: 400 },
+        { country: "Mator Moyi", litres: 900 },
+        { country: "kerasin", litres: 75.6 },
       ];
     } else if (index === 1) {
       return [
-        { country: "Benzin(Litr)", litres: 20000 },
-        { country: "Gaz(kub)", litres: 30000 },
-        { country: "Moy(Litr)", litres: 5000 },
-        // Add more data as needed
+        { country: "Neft", litres: 90 },
+        { country: "Gaz", litres: 250 },
+        { country: "Benzin", litres: 550 },
+        { country: "Dizel", litres: 80.4 },
+        { country: "Asfalt", litres: 100 },
+        { country: "Ko'mir", litres: 500 },
+        { country: "Mator Moyi", litres: 400 },
+        { country: "kerasin", litres: 95.6 },
+      ];
+    } else if (index === 2) {
+      return [
+        { country: "Neft", litres: 100 },
+        { country: "Gaz", litres: 95 },
+        { country: "Benzin", litres: 550 },
+        { country: "Dizel", litres: 40.4 },
+        { country: "Asfalt", litres: 800 },
+        { country: "Ko'mir", litres: 900 },
+        { country: "Mator Moyi", litres: 200 },
+        { country: "kerasin", litres: 65.6 },
+      ];
+    } else if (index === 3) {
+      return [
+        { country: "Neft", litres: 800 },
+        { country: "Gaz", litres: 150 },
+        { country: "Benzin", litres: 950 },
+        { country: "Dizel", litres: 20.4 },
+        { country: "Asfalt", litres: 500 },
+        { country: "Ko'mir", litres: 700 },
+        { country: "Mator Moyi", litres: 700 },
+        { country: "kerasin", litres: 55.6 },
+      ];
+    } else if (index === 4) {
+      return [
+        { country: "Neft", litres: 700 },
+        { country: "Gaz", litres: 550 },
+        { country: "Benzin", litres: 150 },
+        { country: "Dizel", litres: 900 },
+        { country: "Asfalt", litres: 500 },
+        { country: "Ko'mir", litres: 100 },
+        { country: "Mator Moyi", litres: 700 },
+        { country: "kerasin", litres: 25.6 },
+      ];
+    } else if (index === 5) {
+      return [
+        { country: "Neft", litres: 80 },
+        { country: "Gaz", litres: 555 },
+        { country: "Benzin", litres: 660 },
+        { country: "Dizel", litres: 568 },
+        { country: "Asfalt", litres: 489 },
+        { country: "Ko'mir", litres: 156 },
+        { country: "Mator Moyi", litres: 700 },
+        { country: "kerasin", litres: 485 },
+      ];
+    } else if (index === 6) {
+      return [
+        { country: "Neft", litres: 100 },
+        { country: "Gaz", litres: 95 },
+        { country: "Benzin", litres: 550 },
+        { country: "Dizel", litres: 40.4 },
+        { country: "Asfalt", litres: 800 },
+        { country: "Ko'mir", litres: 900 },
+        { country: "Mator Moyi", litres: 200 },
+        { country: "kerasin", litres: 65.6 },
+      ];
+    } else if (index === 7) {
+      return [
+        { country: "Neft", litres: 850 },
+        { country: "Gaz", litres: 565 },
+        { country: "Benzin", litres: 850 },
+        { country: "Dizel", litres: 102 },
+        { country: "Asfalt", litres: 300 },
+        { country: "Ko'mir", litres: 400 },
+        { country: "Mator Moyi", litres: 500 },
+        { country: "kerasin", litres: 700 },
+      ];
+    } else if (index === 8) {
+      return [
+        { country: "Neft", litres: 800 },
+        { country: "Gaz", litres: 900 },
+        { country: "Benzin", litres: 750 },
+        { country: "Dizel", litres: 60.4 },
+        { country: "Asfalt", litres: 500 },
+        { country: "Ko'mir", litres: 400 },
+        { country: "Mator Moyi", litres: 300 },
+        { country: "kerasin", litres: 25.6 },
+      ];
+    } else if (index === 9) {
+      return [
+        { country: "Neft", litres: 800 },
+        { country: "Gaz", litres: 250 },
+        { country: "Benzin", litres: 150 },
+        { country: "Dizel", litres: 900 },
+        { country: "Asfalt", litres: 600 },
+        { country: "Ko'mir", litres: 400 },
+        { country: "Mator Moyi", litres: 900 },
+        { country: "kerasin", litres: 750 },
+      ];
+    } else if (index === 10) {
+      return [
+        { country: "Neft", litres: 100 },
+        { country: "Gaz", litres: 752 },
+        { country: "Benzin", litres: 450 },
+        { country: "Dizel", litres: 400 },
+        { country: "Asfalt", litres: 600 },
+        { country: "Ko'mir", litres: 400 },
+        { country: "Mator Moyi", litrs: 900 },
+        { country: "kerasin", litres: 540 },
+      ];
+    } else if (index === 11) {
+      return [
+        { country: "Neft", litres: 500 },
+        { country: "Gaz", litres: 250 },
+        { country: "Benzin", litres: 550 },
+        { country: "Dizel", litres: 45.4 },
+        { country: "Asfalt", litres: 800 },
+        { country: "Ko'mir", litres: 900 },
+        { country: "Mator Moyi", litres: 200 },
+        { country: "kerasin", litres: 65.6 },
+      ];
+    } else if (index === 12) {
+      return [
+        { country: "Neft", litres: 600 },
+        { country: "Gaz", litres: 500 },
+        { country: "Benzin", litres: 100 },
+        { country: "Dizel", litres: 600 },
+        { country: "Asfalt", litres: 500 },
+        { country: "Ko'mir", litres: 800 },
+        { country: "Mator Moyi", litres: 900 },
+        { country: "kerasin", litres: 150 },
+      ];
+    } else if (index === 13) {
+      return [
+        { country: "Neft", litres: 180 },
+        { country: "Gaz", litres: 160 },
+        { country: "Benzin", litres: 190 },
+        { country: "Dizel", litres: 150 },
+        { country: "Asfalt", litres: 130 },
+        { country: "Ko'mir", litres: 350 },
+        { country: "Mator Moyi", litres: 300 },
+        { country: "kerasin", litres: 550 },
       ];
     } else {
       // Handle other indices or return default data
       return [
-        { country: "Default 1", litres: 10 },
-        { country: "Default 2", litres: 20 },
-        { country: "Default 3", litres: 30 },
-        // Add more data as needed
+        { country: "Neft", litres: 600 },
+        { country: "Gaz", litres: 500 },
+        { country: "Benzin", litres: 100 },
+        { country: "Dizel", litres: 600 },
+        { country: "Asfalt", litres: 500 },
+        { country: "Ko'mir", litres: 800 },
+        { country: "Mator Moyi", litres: 900 },
+        { country: "kerasin", litres: 150 },
       ];
     }
   }
@@ -193,3 +327,22 @@ const tooltipTriggerList = document.querySelectorAll(
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+
+// stop Video when modal Closed
+
+var modal = document.getElementById("exampleModal");
+var video = document.getElementById("youtube-video");
+
+modal.addEventListener("hidden.bs.modal", function () {
+  video.contentWindow.postMessage(
+    '{"event":"command","func":"pauseVideo","args":""}',
+    "*"
+  );
+});
+
+var offcanvasElement = document.getElementById("navbarOffcanvas");
+offcanvasElement.addEventListener("click", function (event) {
+  if (event.target === offcanvasElement) {
+    event.stopPropagation();
+  }
+});
