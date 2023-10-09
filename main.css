@@ -11,6 +11,12 @@ html {
   z-index: 10;
   width: 100%;
 }
+.navbar-brand {
+  max-width: 40px;
+}
+.navbar-brand img {
+  width: 100%;
+}
 .nav-link {
   position: relative;
   transition: 0.3s ease-in-out;
